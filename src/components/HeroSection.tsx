@@ -6,8 +6,7 @@ import Image from 'next/image';
 export default function HeroSection() {
   return (
     <div className="relative bg-gradient-to-br from-primary via-primary/90 to-accent/80 text-primary-foreground py-24 sm:py-32 md:py-40 min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden">
-      {/* Opacity filter div */}
-      <div className="absolute inset-0 bg-primary/30 z-0"></div>
+      {/* Opacity filter div removed */}
       
       <Image
         src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(1).jpg?alt=media&token=ba4d3c35-6043-4c96-8afb-704f736779f6"
