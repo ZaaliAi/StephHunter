@@ -14,13 +14,13 @@ export default function HeroSection() {
       </div>
        {/* Optional: Add a subtle image overlay if desired, ensure it's a professional, abstract, or blurred image */}
       <Image
-        src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(6).png?alt=media&token=ad280ac2-418b-4684-a86e-acd400d05061"
+        src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design.jpg?alt=media&token=2f201008-0865-4fb9-be3b-4a3bccf18e9f"
         alt="Stephanie Hunter hero image"
         layout="fill"
         objectFit="cover"
         className="opacity-100" /* Adjusted opacity for visibility */
         priority
-        data-ai-hint="professional woman portrait" /* Updated hint */
+        data-ai-hint="professional woman portrait" 
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 drop-shadow-md">
