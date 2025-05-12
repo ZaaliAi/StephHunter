@@ -14,13 +14,13 @@ export default function HeroSection() {
       </div>
        {/* Optional: Add a subtle image overlay if desired, ensure it's a professional, abstract, or blurred image */}
       <Image
-        src="https://picsum.photos/1920/1080?blur=2" // Generic blurred background
-        alt="Abstract background"
+        src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(6).png?alt=media&token=ad280ac2-418b-4684-a86e-acd400d05061"
+        alt="Stephanie Hunter hero image"
         layout="fill"
         objectFit="cover"
-        className="opacity-20"
+        className="opacity-100" /* Adjusted opacity for visibility */
         priority
-        data-ai-hint="abstract background"
+        data-ai-hint="professional woman portrait" /* Updated hint */
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 drop-shadow-md">
@@ -39,3 +39,4 @@ export default function HeroSection() {
     </div>
   );
 }
+
