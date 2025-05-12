@@ -27,7 +27,7 @@ export default function AboutPage() {
           </div>
           <div>
             <Image 
-              src="https://picsum.photos/seed/ab0ut/500/600" 
+              src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(2).jpg?alt=media&token=31b0c3b7-de48-4648-a5c0-940b02cbddc5" 
               alt="Stephanie Hunter"
               width={500}
               height={600}
