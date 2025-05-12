@@ -14,7 +14,7 @@ const services = [
     icon: Users,
     description: 'Engaging and insightful keynote presentations tailored to inspire and inform your audience. Stephanie delivers powerful messages on critical topics, drawing from her extensive experience and research.',
     focusAreas: ['Trauma-informed care principles', 'Ethical leadership in challenging environments', 'Building resilient communities', 'The future of safeguarding practices', 'Mental health advocacy and support systems', 'Innovations in adoption support'],
-    image: 'https://picsum.photos/seed/keyn0te/600/400',
+    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(3).jpg?alt=media&token=cb9d1d8c-9ef2-47be-b895-3139cecf5f2d',
     imageHint: 'public speaking conference'
   },
   {
@@ -101,3 +101,4 @@ export default function ServicesPage() {
     </>
   );
 }
+
