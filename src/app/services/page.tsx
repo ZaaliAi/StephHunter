@@ -32,7 +32,7 @@ const services = [
     icon: BookOpen,
     description: 'Expert consultancy to help organizations review, develop, and enhance their services, policies, and strategies. Stephanie provides strategic guidance to foster environments of best practice and continuous improvement.',
     focusAreas: ['Organizational trauma-informed audits', 'Policy development and review for safeguarding', 'Service design for adoption and foster care', 'Mental health strategy implementation', 'Ethical frameworks for service delivery', 'Change management for compassionate cultures'],
-    image: 'https://picsum.photos/seed/c0nsult/600/400',
+    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(5).jpg?alt=media&token=b131c070-8de6-41d3-b8fd-3a1fab6625f4',
     imageHint: 'business meeting consultation'
   },
 ];
