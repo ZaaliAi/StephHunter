@@ -12,13 +12,12 @@ export default function HeroSection() {
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#smallGrid)" /></svg>
          */}
       </div>
-       {/* Optional: Add a subtle image overlay if desired, ensure it's a professional, abstract, or blurred image */}
       <Image
         src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design.jpg?alt=media&token=2f201008-0865-4fb9-be3b-4a3bccf18e9f"
         alt="Stephanie Hunter hero image"
         layout="fill"
         objectFit="cover"
-        className="opacity-100" /* Adjusted opacity for visibility */
+        className="opacity-50" /* Reduced opacity to act as a filter */
         priority
         data-ai-hint="professional woman portrait" 
       />
