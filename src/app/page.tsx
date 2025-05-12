@@ -29,7 +29,7 @@ export default function Home() {
               alt="Stephanie Hunter professional image"
               width={600}
               height={400}
-              className="rounded-lg shadow-xl object-cover aspect-[3/2]"
+              className="rounded-lg shadow-xl object-cover object-bottom aspect-[3/2]"
               data-ai-hint="professional portrait"
             />
           </div>
