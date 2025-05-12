@@ -2,8 +2,9 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react'; // Removed Sparkles
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -43,8 +44,16 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-2 text-primary hover:text-accent transition-colors">
-            <Sparkles className="h-7 w-7" />
-            <span className="text-xl font-semibold">Stephanie Hunter</span>
+            <Image 
+              src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/1%20(1).png?alt=media&token=715f7993-5c5c-48ed-b7b5-17505ac5a339"
+              alt="Stephanie Hunter Logo"
+              width={180} // Adjusted width
+              height={45} // Adjusted height for a typical logo aspect ratio
+              className="object-contain"
+              priority
+            />
+            {/* <Sparkles className="h-7 w-7" />
+            <span className="text-xl font-semibold">Stephanie Hunter</span> */}
           </Link>
 
           <nav className="hidden md:flex items-center space-x-2">
