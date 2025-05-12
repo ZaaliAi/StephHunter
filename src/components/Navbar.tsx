@@ -47,8 +47,8 @@ export default function Navbar() {
             <Image 
               src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/1%20(1).png?alt=media&token=715f7993-5c5c-48ed-b7b5-17505ac5a339"
               alt="Stephanie Hunter Logo"
-              width={180} // Adjusted width
-              height={45} // Adjusted height for a typical logo aspect ratio
+              width={225} 
+              height={56} 
               className="object-contain"
               priority
             />
@@ -102,3 +102,4 @@ export default function Navbar() {
     </header>
   );
 }
+
