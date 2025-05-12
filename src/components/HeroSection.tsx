@@ -6,18 +6,15 @@ import Image from 'next/image';
 export default function HeroSection() {
   return (
     <div className="relative bg-gradient-to-br from-primary via-primary/90 to-accent/80 text-primary-foreground py-24 sm:py-32 md:py-40 min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden">
-      {/* Placeholder for a background image pattern or subtle texture if desired */}
-      <div className="absolute inset-0 opacity-10">
-         {/* Example of a subtle pattern - replace with actual SVG or remove if not needed 
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" strokeWidth="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#smallGrid)" /></svg>
-         */}
-      </div>
+      {/* Opacity filter div */}
+      <div className="absolute inset-0 bg-primary/30 z-0"></div>
+      
       <Image
-        src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design.jpg?alt=media&token=2f201008-0865-4fb9-be3b-4a3bccf18e9f"
+        src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(1).jpg?alt=media&token=ba4d3c35-6043-4c96-8afb-704f736779f6"
         alt="Stephanie Hunter hero image"
         layout="fill"
         objectFit="cover"
-        className="opacity-50" /* Reduced opacity to act as a filter */
+        className="opacity-50" 
         priority
         data-ai-hint="professional woman portrait" 
       />
