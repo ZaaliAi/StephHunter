@@ -25,7 +25,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <Image 
-              src="https://picsum.photos/seed/stephanie/600/400" 
+              src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_1678.jpg?alt=media&token=49e18d1b-ba8d-4e58-ad0c-91367f47fa31" 
               alt="Stephanie Hunter professional image"
               width={600}
               height={400}
