@@ -23,7 +23,7 @@ const services = [
     icon: Briefcase,
     description: 'Customized training programs designed to equip professionals and organizations with the skills and knowledge to implement trauma-informed and ethical practices effectively. Interactive workshops and comprehensive modules available.',
     focusAreas: ['Advanced trauma-informed practice', 'Safeguarding vulnerable adults and children', 'Specialized adoption support training', 'Mental health first aid and awareness', 'Developing ethical decision-making frameworks', 'Leadership in compassionate care'],
-    image: 'https://picsum.photos/seed/tr4ining/600/400',
+    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(4).jpg?alt=media&token=efc27740-aba1-477f-af3a-2898c59a80a9',
     imageHint: 'workshop training'
   },
   {
