@@ -11,8 +11,8 @@ export default function HeroSection() {
       <Image
         src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(1).jpg?alt=media&token=ba4d3c35-6043-4c96-8afb-704f736779f6"
         alt="Stephanie Hunter hero image"
-        layout="fill"
-        objectFit="cover"
+        fill
+        style={{ objectFit: 'cover' }}
         className="opacity-50" 
         priority
         data-ai-hint="professional woman portrait" 
