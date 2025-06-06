@@ -38,7 +38,7 @@ const services = [
     id: 'webinars',
     title: 'Webinars & Media Engagements',
     icon: Users, 
-    description: 'Stephanie has delivered commissioned training webinars for organizations such as The Children and Trauma Community Hub (which hosts the National Adoption Hub - CATCH), as well as various other charities and councils. She has also regularly spoken on the radio and participated in press interviews, sharing her expertise on related topics.',
+    description: 'Stephanie has delivered commissioned training webinars for organizations such as The Children and Trauma Community Hub (which hosts the National Adoption Hub - CATCH), as well as various other charities and councils. She has alsoregularly spoken on the radio and participated in press interviews, sharing her expertise on related topics.',
     focusAreas: ['Commissioned training webinars for charities and councils', 'Expert contributions for radio broadcasts', 'Press interviews on trauma, adoption, and mental health', 'Insights for national adoption hubs and community initiatives'],
     image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(3).jpg?alt=media&token=cb9d1d8c-9ef2-47be-b895-3139cecf5f2d', 
     imageHint: 'webinar or online presentation'
@@ -53,49 +53,68 @@ export default function ServicesPage() {
         description="Tailored solutions to empower individuals and organisations in trauma-informed practice, ethical leadership, and compassionate care." 
       />
       
-      {services.map((service, index) => (
-        <SectionWrapper key={service.id} id={service.id} className={index % 2 === 0 ? 'bg-background' : 'bg-secondary/20'}>
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start mb-6 md:mb-8">
-            {/* Image container */}
-            <div className={`w-full ${index % 2 !== 0 ? 'md:order-2' : 'md:order-1'}`}>
-              <Image 
-                src={service.image}
-                alt={service.title}
-                width={600} 
-                height={400}
-                className="rounded-xl shadow-2xl object-cover aspect-[3/2] w-full h-auto"
-                data-ai-hint={service.imageHint}
-              />
+      {services.map((service, index) => {
+        // Split focusAreas for two-column layout
+        const middleIndex = service.focusAreas ? Math.ceil(service.focusAreas.length / 2) : 0;
+        const firstHalf = service.focusAreas ? service.focusAreas.slice(0, middleIndex) : [];
+        const secondHalf = service.focusAreas ? service.focusAreas.slice(middleIndex) : [];
+
+        return (
+          <SectionWrapper key={service.id} id={service.id} className={index % 2 === 0 ? 'bg-background' : 'bg-secondary/20'}>
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start mb-6 md:mb-8">
+              {/* Image container */}
+              <div className={`w-full ${index % 2 !== 0 ? 'md:order-2' : 'md:order-1'}`}>
+                <Image 
+                  src={service.image}
+                  alt={service.title}
+                  width={600} 
+                  height={400}
+                  className="rounded-xl shadow-2xl object-cover aspect-[3/2] w-full h-auto"
+                  data-ai-hint={service.imageHint}
+                />
+              </div>
+              {/* Primary Text (Icon, Title, Description) */}
+              <div className={`space-y-4 ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
+                <service.icon className="h-12 w-12 text-accent mb-2" />
+                <h2 className="text-3xl font-semibold text-primary">{service.title}</h2>
+                <p className="text-lg text-muted-foreground">{service.description}</p>
+              </div>
             </div>
-            {/* Primary Text (Icon, Title, Description) */}
-            <div className={`space-y-4 ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
-              <service.icon className="h-12 w-12 text-accent mb-2" />
-              <h2 className="text-3xl font-semibold text-primary">{service.title}</h2>
-              <p className="text-lg text-muted-foreground">{service.description}</p>
+            
+            {/* Secondary Text (Focus Areas, Button) - Full width below */}
+            <div className="w-full">
+              {service.focusAreas && service.focusAreas.length > 0 && (
+                <>
+                  <h3 className="text-xl font-medium text-primary pt-4 mb-4 text-center">Focus Areas Include:</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 max-w-2xl mx-auto mb-6">
+                    <ul className="list-none p-0 space-y-2">
+                      {firstHalf.map((area, i) => (
+                        <li key={`col1-${service.id}-${i}`} className="flex items-start">
+                          <span className="text-accent mr-2 mt-1">&#10003;</span>
+                          <span className="text-muted-foreground">{area}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <ul className="list-none p-0 space-y-2">
+                      {secondHalf.map((area, i) => (
+                        <li key={`col2-${service.id}-${i}`} className="flex items-start">
+                          <span className="text-accent mr-2 mt-1">&#10003;</span>
+                          <span className="text-muted-foreground">{area}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              )}
+              <div className="text-center"> {/* Centering the button */}
+                <Button asChild>
+                  <Link href="/contact">Enquire about {service.title}</Link>
+                </Button>
+              </div>
             </div>
-          </div>
-          
-          {/* Secondary Text (Focus Areas, Button) - Full width below */}
-          <div className="w-full">
-            {service.focusAreas && service.focusAreas.length > 0 && (
-              <>
-                <h3 className="text-xl font-medium text-primary pt-4 mb-3">Focus Areas Include:</h3>
-                <ul className="space-y-2 mb-6">
-                  {service.focusAreas.map((area, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className="text-accent mr-2 mt-1">&#10003;</span> {/* Checkmark */}
-                      <span className="text-muted-foreground">{area}</span>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
-            <Button asChild>
-              <Link href="/contact">Enquire about {service.title}</Link>
-            </Button>
-          </div>
-        </SectionWrapper>
-      ))}
+          </SectionWrapper>
+        );
+      })}
 
       <SectionWrapper className="bg-primary text-primary-foreground">
         <div className="text-center">
