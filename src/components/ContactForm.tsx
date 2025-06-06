@@ -15,9 +15,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+// import { useToast } from "@/hooks/use-toast"; // Now used by the hook
 import { Loader2 } from "lucide-react";
-import { useState } from "react";
+// import { useState } from "react"; // Now managed by the hook
+import { useContactFormSubmit } from "@/hooks/useContactFormSubmit"; // Import the new hook
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -33,27 +34,13 @@ const formSchema = z.object({
   }),
 });
 
-export type ContactFormValues = z.infer<typeof formSchema>;
+export type ContactFormValues = z.infer<typeof formSchema>; // Ensure this is exported
 
-// This is a mock server action. In a real app, you'd implement this.
-async function submitContactForm(data: ContactFormValues): Promise<{ success: boolean; message: string }> {
-  console.log("Form data submitted:", data);
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  
-  // Simulate a random success/failure for demonstration
-  // if (Math.random() > 0.5) {
-  //   return { success: true, message: "Your message has been sent successfully!" };
-  // } else {
-  //   return { success: false, message: "Failed to send message. Please try again." };
-  // }
-  return { success: true, message: "Your message has been sent successfully! Stephanie will be in touch soon." };
-}
-
+// The submitContactForm function has been moved to useContactFormSubmit.ts
 
 export default function ContactForm() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  // const { toast } = useToast(); // Handled by the hook
+  // const [isSubmitting, setIsSubmitting] = useState(false); // Handled by the hook
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
@@ -64,37 +51,15 @@ export default function ContactForm() {
     },
   });
 
-  async function onSubmit(values: ContactFormValues) {
-    setIsSubmitting(true);
-    try {
-      const result = await submitContactForm(values);
-      if (result.success) {
-        toast({
-          title: "Success!",
-          description: result.message,
-        });
-        form.reset();
-      } else {
-        toast({
-          title: "Error",
-          description: result.message,
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
+  // Use the new hook
+  const { submitForm, isSubmitting } = useContactFormSubmit({ form });
+
+  // The onSubmit function is now replaced by submitForm from the hook
+  // async function onSubmit(values: ContactFormValues) { ... } // Removed
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 bg-card p-6 sm:p-8 rounded-lg shadow-lg">
+      <form onSubmit={form.handleSubmit(submitForm)} className="space-y-6 bg-card p-6 sm:p-8 rounded-lg shadow-lg">
         <FormField
           control={form.control}
           name="name"

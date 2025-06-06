@@ -1,0 +1,46 @@
+name: Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - main # Or your default branch, e.g., master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Add step to set up Node.js if your project needs build steps
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '18' # Specify your Node.js version
+
+      # Add caching for npm dependencies if you have a build step
+      # - name: Cache Node.js modules
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ~/.npm
+      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-node-
+
+      # Add build step if needed (e.g., for Next.js)
+      # - name: Install dependencies and Build
+      #   run: |
+      #     npm ci
+      #     npm run build # Or your specific build command, e.g., next build
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master # A common community action for Firebase
+        with:
+          args: deploy --only firestore,storage,hosting # Add other services as needed, e.g., functions
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }} # Requires FIREBASE_TOKEN secret in GitHub repo
+          # PROJECT_ID: "your-firebase-project-id" # Optional: if not using .firebaserc or multiple projects
+          # Add PROJECT_PATH if your firebase.json is not in the root.
+        # Ensure your firebase.json points to the correct build directory for hosting (e.g., "out" or "build")
+        # For Next.js static export, it's typically "out".
+        # The firebase.json created earlier already specifies "public": "out".
