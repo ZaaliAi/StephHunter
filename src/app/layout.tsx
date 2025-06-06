@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google'; // Changed from Geist_Sans to Inter
 import './globals.css';
+// import 'react-quill/dist/quill.snow.css'; // Removed: Import Quill styles globally
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Toaster } from "@/components/ui/toaster";

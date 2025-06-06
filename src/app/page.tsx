@@ -18,7 +18,7 @@ export default function Home() {
             Empowering Change, Inspiring Growth
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Stephanie Hunter is dedicated to transforming practices and fostering environments where individuals and organizations can thrive. With expertise in trauma-informed care, ethical leadership, and impactful training, Stephanie offers a unique blend of professional insight and compassionate engagement.
+            Stephanie Hunter is a multi-award winning professional dedicated to transforming practices and fostering environments where individuals and organisations can thrive. With expertise in trauma-informed care, ethical leadership, and impactful training, she offers a unique blend of professional insight and compassionate engagement. Trusted by organisations and professionals for transformative reflective and relational supervision, Stephanie is also a SILP methodology independent reviewer and an EMDR-trained therapist.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export default function Home() {
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-primary">A Message from Stephanie</h3>
             <p className="text-muted-foreground">
-              "My work is driven by a commitment to ethical practice and the belief that understanding trauma is key to unlocking human potential. I partner with organizations and individuals to build resilience, foster compassionate leadership, and create lasting positive change. Let's work together to make a meaningful difference."
+              "My work is driven by a commitment to ethical practice and the belief that understanding trauma is key to unlocking human potential. I partner with organisations and individuals to build resilience, foster compassionate leadership, and create lasting positive change. Let's work together to make a meaningful difference."
             </p>
             <Button asChild variant="outline">
               <Link href="/about">Learn More About Stephanie <ArrowRight className="ml-2 h-4 w-4" /></Link>
@@ -59,7 +59,7 @@ export default function Home() {
               <CardTitle>Keynote Speaking</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>Inspiring and informative talks on trauma, safeguarding, adoption, and mental health.</CardDescription>
+              <CardDescription>Inspiring talks on trauma, safeguarding, self-care, adoption and promoting best outcomes for cared for children.</CardDescription>
                <Button variant="link" asChild className="mt-4 p-0 text-accent">
                 <Link href="/services#keynotes">Discover Keynotes <ArrowRight className="ml-1 h-3 w-3" /></Link>
               </Button>
@@ -71,7 +71,7 @@ export default function Home() {
               <CardTitle>Bespoke Training</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>Tailored training programs to enhance skills and knowledge in ethical, trauma-informed practices.</CardDescription>
+              <CardDescription>Tailored training programmes to enhance skills and knowledge in ethical, trauma-informed practices.</CardDescription>
               <Button variant="link" asChild className="mt-4 p-0 text-accent">
                 <Link href="/services#training">Explore Training <ArrowRight className="ml-1 h-3 w-3" /></Link>
               </Button>
@@ -83,7 +83,7 @@ export default function Home() {
               <CardTitle>Consultancy</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>Expert advice and strategic guidance to improve services and organizational approaches.</CardDescription>
+              <CardDescription>Expert advice and strategic guidance to improve services and organisational approaches.</CardDescription>
               <Button variant="link" asChild className="mt-4 p-0 text-accent">
                 <Link href="/services#consultancy">Learn About Consultancy <ArrowRight className="ml-1 h-3 w-3" /></Link>
               </Button>

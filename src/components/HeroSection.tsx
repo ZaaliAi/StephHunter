@@ -1,37 +1,38 @@
 
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+"use client";
+
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function HeroSection() {
   return (
     <div className="relative bg-gradient-to-br from-primary via-primary/90 to-accent/80 text-primary-foreground py-24 sm:py-32 md:py-40 min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden">
-      {/* Opacity filter div removed */}
-      
       <Image
-        src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(1).jpg?alt=media&token=ba4d3c35-6043-4c96-8afb-704f736779f6"
-        alt="Stephanie Hunter hero image"
+        src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6225.jpeg?alt=media&token=382d1fa7-5d0f-455a-944d-62117d6df407"
+        alt="Stephanie Hunter - engaging portrait"
         fill
-        style={{ objectFit: 'cover' }}
-        className="opacity-50" 
+        style={{ objectFit: 'cover', objectPosition: 'center 8%' }} // Position is good
+        className="opacity-40" // Adjusted opacity for more image visibility
         priority
-        data-ai-hint="professional woman portrait" 
+        data-ai-hint="professional woman smiling"
       />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 pt-20"> 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 drop-shadow-md">
           Stephanie Hunter
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl font-medium text-primary-foreground/90 mb-4 drop-shadow-sm">
-          Keynote Speaker | Consultant | Trainer
+        <p className="text-xl sm:text-2xl md:text-3xl text-primary-foreground/90 max-w-3xl mx-auto mb-10 drop-shadow-sm">
+          Keynote Speaker | Social Work Consultant | Trainer | SILP Methodology Trained Independent Reviewer | Practice Educator | Author | Therapist
         </p>
-        <p className="text-lg sm:text-xl md:text-2xl text-primary-foreground/80 max-w-3xl mx-auto mb-10 drop-shadow-sm">
-          Championing trauma-informed, ethical practice with compassion and integrity.
-        </p>
-        <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transform hover:scale-105 transition-transform duration-300">
-          <Link href="/contact">Book Stephanie</Link>
-        </Button>
+        <div className="space-x-4">
+          <Button size="lg" asChild>
+            <Link href="/services">Explore Services</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild className="text-accent border-primary-foreground/50 hover:bg-primary-foreground/10">
+            <Link href="/contact">Book Stephanie</Link>
+          </Button>
+        </div>
       </div>
     </div>
   );
 }
-

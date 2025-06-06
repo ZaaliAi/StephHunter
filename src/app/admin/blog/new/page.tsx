@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -81,11 +80,9 @@ function AddNewBlogPostPage() {
       return;
     }
 
-    console.log('Current user:', auth.currentUser); // Log the current user
+    console.log('Current user UID:', auth.currentUser.uid); // Log the current user UID
 
-    try {
-      const blogPostsCollection = collection(db, 'blogPosts');
-      await addDoc(blogPostsCollection, {
+    const postData = {
         title: title,
         content: content, // This will now be HTML from Quill
         excerpt: excerpt,
@@ -95,7 +92,13 @@ function AddNewBlogPostPage() {
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
         status: 'published',
-      });
+      };
+
+    console.log('Data being published:', postData); // Log the data object
+
+    try {
+      const blogPostsCollection = collection(db, 'blogPosts');
+      await addDoc(blogPostsCollection, postData);
 
       router.push('/admin/blog');
     } catch (err) {

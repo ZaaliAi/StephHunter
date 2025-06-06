@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react'; // Removed Sparkles
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -14,7 +14,8 @@ const navItems = [
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
   { name: 'Media', href: '/media' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Testimonials', href: '/testimonials' }, // Added Testimonials link
+  // { name: 'Contact', href: '/contact' }, // Removed Contact link as per request
 ];
 
 export default function Navbar() {
@@ -52,8 +53,6 @@ export default function Navbar() {
               className="object-contain"
               priority
             />
-            {/* <Sparkles className="h-7 w-7" />
-            <span className="text-xl font-semibold">Stephanie Hunter</span> */}
           </Link>
 
           <nav className="hidden md:flex items-center space-x-2">
@@ -102,4 +101,3 @@ export default function Navbar() {
     </header>
   );
 }
-
