@@ -6,7 +6,7 @@ import PageHeader from '@/components/PageHeader';
 import SectionWrapper from '@/components/SectionWrapper';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Film, Mic, BookText, ExternalLink, Newspaper } from 'lucide-react';
+import { Film, Mic, BookText, ExternalLink, Newspaper, Download } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { db } from '@/lib/firebase';
@@ -22,7 +22,8 @@ interface MediaItem {
   linkLabel: string;
   image: string;
   imageHint: string;
-  imageFit?: 'cover' | 'contain'; // Added optional imageFit property
+  imageFit?: 'cover' | 'contain';
+  isDownload?: boolean;
 }
 
 // Interface for fetched blog posts (can be shared from a types file)
@@ -31,27 +32,28 @@ interface BlogPost {
   title: string;
   excerpt?: string;
   slug: string;
-  createdAt: Timestamp | Date; // Firestore timestamp or Date object
-  // featuredImageUrl?: string;
+  createdAt: Timestamp | Date; 
+  featuredImageUrl?: string; // Uncommented this line
 }
 
 const staticMediaItems: MediaItem[] = [
   {
     type: 'Academic Profile & Research',
     title: "Stephanie Hunter's Published Research",
-    description: "Access Stephanie's published research and academic profile on the Sunderland University Repository (SURE), including her work on 'The Power and Importance of Attachment'.",
+    description: "Stephanie Hunter (2016) Evaluation of Sunderland Children’s Services adoption team’s use of the adoption support fund. Project Report. Sunderland City Council, Sunderland.",
     icon: BookText,
-    link: 'https://sure.sunderland.ac.uk/id/eprint/9874/',
-    linkLabel: "View on SURE Sunderland",
+    link: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/ASF%20-%20final%20evaluation%20PDF.pdf?alt=media&token=129b0ace-6784-44a5-8776-f1928131d61a',
+    linkLabel: "Download Research PDF",
     image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/186a396fd0cab5c4fb2a83f2adb860df_f64e5906bf.webp?alt=media&token=40395e57-46ae-4e0a-a4f5-86640d66e07a',
-    imageHint: "academic profile research paper"
+    imageHint: "academic profile research paper",
+    isDownload: true
   },
   {
     type: 'Published Research & Film',
     title: 'Award-Winning Research Film on Care-Experienced Adults',
     description: "Stephanie's published research with care-experienced adults was awarded funding by Social Work England to produce a film which has been nationally and internationally recognised and applauded.",
     icon: Film,
-    link: '#', // Placeholder link, update if you have a specific URL
+    link: '#', 
     linkLabel: 'Learn More',
     image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6194.jpeg?alt=media&token=31d6929f-2fef-4422-b3de-106dca1751e3', 
     imageHint: 'award presentation photo' 
@@ -61,9 +63,9 @@ const staticMediaItems: MediaItem[] = [
     title: 'Engaging Webinars on Trauma and Mental Health',
     description: "Stephanie regularly hosts and participates in webinars covering a range of topics including trauma recovery, mental health in the workplace, and innovative safeguarding techniques. These sessions are designed to be interactive and accessible to a wide audience.",
     icon: Mic,
-    link: '#', // Placeholder link
+    link: '#', 
     linkLabel: 'View Past Webinars (Example)',
-    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6200.jpeg?alt=media&token=7782c462-3460-44ad-9ef2-1526b10f3740', 
+    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6312.JPEG?alt=media&token=4b42cee1-7320-40d8-8500-b42d84caa513', 
     imageHint: 'webinar presentation' 
   },
   {
@@ -71,7 +73,7 @@ const staticMediaItems: MediaItem[] = [
     title: 'Contributions to Professional Publications',
     description: "Stephanie has authored and co-authored articles and chapters in various professional publications and books, sharing her expertise on adoption, trauma-informed care, and ethical leadership. Her written work aims to advance knowledge and promote best practices.",
     icon: BookText,
-    link: '#', // Placeholder link
+    link: '#', 
     linkLabel: 'Explore Publications (Example)',
     image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6186.jpeg?alt=media&token=57ade064-1744-4101-aef5-0fea5c8d28c2', 
     imageHint: 'professional portrait' 
@@ -81,11 +83,11 @@ const staticMediaItems: MediaItem[] = [
     title: 'Collaborative Training Film with Social Work England',
     description: "Stephanie played a key role in a significant training film produced in partnership with Social Work England, focusing on best practices in ethical decision-making and trauma-informed approaches within social work. This film is utilized for professional development across the sector.",
     icon: Film,
-    link: '#', // Placeholder link
+    link: '#', 
     linkLabel: 'Learn More (Example)',
     image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6191.jpeg?alt=media&token=582a2679-aeab-4430-b229-f9f648460a1e',
     imageHint: 'professional portrait for training film',
-    imageFit: 'contain' // Set imageFit to contain for this item
+    imageFit: 'contain' 
   },
 ];
 
@@ -111,14 +113,13 @@ export default function MediaPage() {
             title: data.title || 'Untitled',
             excerpt: data.excerpt || '',
             slug: data.slug || '',
-            createdAt: data.createdAt, // Firestore Timestamp
-            // featuredImageUrl: data.featuredImageUrl || undefined
+            createdAt: data.createdAt, 
+            featuredImageUrl: data.featuredImageUrl || undefined // Ensured this is included
           } as BlogPost;
         });
         setBlogPosts(postsData);
       } catch (error) {
         console.error("Error fetching blog posts: ", error);
-        // Optionally set an error state to display to the user
       }
       setIsLoadingPosts(false);
     };
@@ -141,7 +142,6 @@ export default function MediaPage() {
         description="Sharing knowledge and insights through various platforms." 
       />
       <SectionWrapper>
-        {/* Existing Media Items */}
         <h2 className="text-3xl font-semibold text-primary mb-8">Featured Contributions</h2>
         <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 mb-16">
           {staticMediaItems.map((item, index) => (
@@ -170,8 +170,8 @@ export default function MediaPage() {
                 {item.link !== '#' && (
                   <CardFooter>
                     <Button variant="outline" asChild>
-                      <a href={item.link} target="_blank" rel="noopener noreferrer">
-                        {item.linkLabel} <ExternalLink className="ml-2 h-4 w-4" />
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" download={item.isDownload}>
+                        {item.linkLabel} {item.isDownload ? <Download className="ml-2 h-4 w-4" /> : <ExternalLink className="ml-2 h-4 w-4" />}
                       </a>
                     </Button>
                   </CardFooter>
@@ -181,7 +181,6 @@ export default function MediaPage() {
           ))}
         </div>
 
-        {/* Blog Posts Section */}
         <h2 className="text-3xl font-semibold text-primary mb-8 pt-8 border-t border-border">Latest Blog Posts</h2>
         {isLoadingPosts ? (
           <p>Loading blog posts...</p>
@@ -189,9 +188,21 @@ export default function MediaPage() {
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {blogPosts.map((post) => (
               <Card key={post.id} className="flex flex-col hover:shadow-xl transition-shadow duration-300">
-                <CardHeader>
+                {/* Placeholder for featured image in blog list */}
+                {post.featuredImageUrl && (
+                  <div className="relative w-full h-48">
+                    <Image 
+                      src={post.featuredImageUrl} 
+                      alt={post.title} 
+                      fill 
+                      style={{objectFit: 'cover'}} 
+                      className="rounded-t-lg"
+                    />
+                  </div>
+                )}
+                <CardHeader className={!post.featuredImageUrl ? 'pt-6' : ''}>
                   <div className="flex items-center mb-2">
-                    <Newspaper className="h-5 w-5 text-accent mr-2" /> {/* Blog Icon */}
+                    <Newspaper className="h-5 w-5 text-accent mr-2" />
                     <span className="text-xs text-muted-foreground uppercase tracking-wider">
                       {formatDate(post.createdAt)}
                     </span>

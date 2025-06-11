@@ -21,7 +21,7 @@ const services = [
     title: 'Bespoke Training',
     icon: Briefcase,
     description: 'Customized training programmes designed to equip professionals and organisations with the skills and knowledge to implement trauma-informed and ethical practices effectively. Interactive workshops and comprehensive modules available.',
-    focusAreas: ['Advanced trauma-informed practice', 'Safeguarding vulnerable adults and children', 'Best practice in supporting families formed by adoption, kinship, fostering and residential childcare.', 'Evidence-based mental health care practices.', 'Developing ethical decision-making frameworks', 'Leadership in compassionate care'],
+    focusAreas: ['Advanced trauma-informed practice', 'Safeguarding vulnerable adults and children', 'Best practice in supporting families formed by adoption, kinship, fostering and residential childcare.', 'Evidence-based mental health care practices.', 'Developing ethical decision-making frameworks', 'Trauma responsive and compassionate leadership'],
     image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(4).jpg?alt=media&token=efc27740-aba1-477f-af3a-2898c59a80a9',
     imageHint: 'workshop training'
   },
@@ -40,7 +40,7 @@ const services = [
     icon: Users, 
     description: 'Stephanie has delivered commissioned training webinars for organizations such as The Children and Trauma Community Hub (which hosts the National Adoption Hub - CATCH), as well as various other charities and councils. She has alsoregularly spoken on the radio and participated in press interviews, sharing her expertise on related topics.',
     focusAreas: ['Commissioned training webinars for charities and councils', 'Expert contributions for radio broadcasts', 'Press interviews on trauma, adoption, and mental health', 'Insights for national adoption hubs and community initiatives'],
-    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(3).jpg?alt=media&token=cb9d1d8c-9ef2-47be-b895-3139cecf5f2d', 
+    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6310.JPEG?alt=media&token=eb26de3f-d171-425e-8778-3d29d7891da7', 
     imageHint: 'webinar or online presentation'
   }
 ];
@@ -130,4 +130,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

@@ -17,7 +17,7 @@ const clientTestimonials = [
     organisation: "", // Changed to empty string to display name as title
   },
   {
-    quote: "Try as I may, I really cannot come up with a punchy few words which would do justice to how to best describe Stephanie's special, unique and positive impact upon those children and adults she works with, cares for and is committed to. Stephanie's enthusiasm, kindness, knowledge, expertise and continual postitive affirmation of others is both envigorating and enabling. Stephanie is one of the genuinely lovely professionals I have bbeen lucky enough to meet along the way. My team and I loved working with Stephanie and genuinely look forward to doing so again. I cannot recommened Stephanie high enough :)",
+    quote: "Try as I may, I really cannot come up with a punchy few words which would do justice to how to best describe Stephanie's special, unique and positive impact upon those children and adults she works with, cares for and is committed to. Stephanie's enthusiasm, kindness, knowledge, expertise and continual postitive affirmation of of others is both envigorating and enabling. Stephanie is one of the genuinely lovely professionals I have bbeen lucky enough to meet along the way. My team and I loved working with Stephanie and genuinely look forward to doing so again. I cannot recommened Stephanie high enough :)",
     name: "Eddie O'Hara",
     organisation: "", // Organisation not specified
   },
@@ -52,8 +52,8 @@ const trustedByLogos = [
     size: "large" // Custom size identifier
   },
   {
-    name: "House of Lords",
-    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/4aba954f2698316c45621d8665f2d825.jpg?alt=media&token=79cca158-eefe-4be2-9fd0-eabd3d197b28",
+    name: "ACAMH",
+    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/ACAMH_MasterLogo.png?alt=media&token=81e0c03c-9aea-4e33-b554-44e140f2cc99",
     size: "large" // Custom size identifier
   }
 ];
@@ -118,7 +118,7 @@ export default function TestimonialsPage() {
               <img 
                 src={logo.src} 
                 alt={logo.name} 
-                className={`object-contain transition-all duration-300 ${logo.size === 'large' ? 'h-14 md:h-20' : 'h-12 md:h-16'}`}
+                className={`object-contain transition-all duration-300 ${logo.size === '2xl' ? 'h-28 md:h-40' : logo.size === 'xlarge' ? 'h-20 md:h-28' : logo.size === 'large' ? 'h-14 md:h-20' : 'h-12 md:h-16'}`}
               />
             </div>
           ))}
