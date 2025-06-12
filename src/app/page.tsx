@@ -18,7 +18,7 @@ export default function Home() {
             Empowering Change, Inspiring Growth
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Stephanie Hunter is a multi-award winning professional dedicated to transforming practices and fostering environments where individuals and organisations can thrive. With expertise in trauma-informed care, ethical leadership, and impactful training, she offers a unique blend of professional insight and compassionate engagement. Trusted by organisations and professionals for transformative reflective and relational supervision, Stephanie is also a SILP methodology independent reviewer and an EMDR-trained therapist.
+            Stephanie Hunter is a multi-award-winning professional dedicated to transforming practices and fostering environments where individuals and organisations can thrive. With expertise in trauma-informed care, ethical leadership, and impactful training, she offers a unique blend of professional insight and compassionate engagement. Trusted by organisations and professionals for transformative reflective and relational supervision, Stephanie is also a SILP methodology independent reviewer and an EMDR-trained therapist.
           </p>
         </div>
 
@@ -55,11 +55,10 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="bg-background text-foreground hover:shadow-2xl transition-shadow duration-300">
             <CardHeader>
-              <Users className="h-10 w-10 text-accent mb-2" />
               <CardTitle>Keynote Speaking</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>Inspiring talks on trauma, safeguarding, self-care, adoption and promoting best outcomes for cared for children.</CardDescription>
+              <CardDescription>Inspiring talks on trauma, safeguarding, self-care, adoption, and promoting the best outcomes for cared-for children.</CardDescription>
                <Button variant="link" asChild className="mt-4 p-0 text-accent">
                 <Link href="/services#keynotes">Discover Keynotes <ArrowRight className="ml-1 h-3 w-3" /></Link>
               </Button>
@@ -67,11 +66,10 @@ export default function Home() {
           </Card>
           <Card className="bg-background text-foreground hover:shadow-2xl transition-shadow duration-300">
             <CardHeader>
-              <Briefcase className="h-10 w-10 text-accent mb-2" />
               <CardTitle>Bespoke Training</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>Tailored training programmes to enhance skills and knowledge in ethical, trauma-informed practices.</CardDescription>
+              <CardDescription>Tailored training programs to enhance skills and knowledge in ethical, trauma-informed practices.</CardDescription>
               <Button variant="link" asChild className="mt-4 p-0 text-accent">
                 <Link href="/services#training">Explore Training <ArrowRight className="ml-1 h-3 w-3" /></Link>
               </Button>
@@ -79,7 +77,6 @@ export default function Home() {
           </Card>
           <Card className="bg-background text-foreground hover:shadow-2xl transition-shadow duration-300">
             <CardHeader>
-              <BookOpen className="h-10 w-10 text-accent mb-2" />
               <CardTitle>Consultancy</CardTitle>
             </CardHeader>
             <CardContent>
@@ -96,20 +93,6 @@ export default function Home() {
             </Button>
           </div>
       </SectionWrapper>
-
-      <SectionWrapper>
-        <div className="text-center">
-          <MessageSquare className="h-12 w-12 text-primary mx-auto mb-4" />
-          <h2 className="text-3xl font-bold mb-4">Ready to Connect?</h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
-            Reach out to discuss your needs and how Stephanie can support your goals.
-          </p>
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="/contact">Get In Touch</Link>
-          </Button>
-        </div>
-      </SectionWrapper>
     </>
   );
 }
-

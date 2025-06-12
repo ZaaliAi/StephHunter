@@ -1,14 +1,14 @@
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google'; // Changed from Geist_Sans to Inter
+import { Inter } from 'next/font/google';
 import './globals.css';
-// import 'react-quill/dist/quill.snow.css'; // Removed: Import Quill styles globally
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Toaster } from "@/components/ui/toaster";
+import ContactCTA from '@/components/ContactCTA';
 
-const inter = Inter({ // Changed from Geist_Sans to Inter
-  variable: '--font-geist-sans', // Kept CSS variable name
+const inter = Inter({
+  variable: '--font-geist-sans',
   subsets: ['latin'],
 });
 
@@ -29,6 +29,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        <ContactCTA />
         <Footer />
         <Toaster />
       </body>

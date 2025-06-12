@@ -9,13 +9,18 @@ import { Textarea } from '@/components/ui/textarea';
 import QuillEditor from '@/components/QuillEditor';
 import withAuth from '@/auth/withAuth';
 import PageHeader from '@/components/PageHeader';
-import { db, auth, storage } from '@/lib/firebase'; // Added storage
+import { db, storage } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"; // Storage functions
-import Image from 'next/image'; // For image preview
-import { Progress } from '@/components/ui/progress'; // For upload progress
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import Image from 'next/image';
+import { Progress } from '@/components/ui/progress';
+import { User } from 'firebase/auth';
 
-function AddNewBlogPostPage() {
+interface AddNewBlogPostPageProps {
+  user: User; // User object passed from withAuth HOC
+}
+
+function AddNewBlogPostPage({ user }: AddNewBlogPostPageProps) {
   const router = useRouter();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -24,20 +29,20 @@ function AddNewBlogPostPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Image upload states
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreviewUrl, setImagePreviewUrl] = useState<string | null>(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isUploadingImage, setIsUploadingImage] = useState(false);
 
+
   useEffect(() => {
-    // Clean up object URL
     return () => {
       if (imagePreviewUrl) {
         URL.revokeObjectURL(imagePreviewUrl);
       }
     };
   }, [imagePreviewUrl]);
+
 
   const generateSlug = (str: string) => {
     return str
@@ -61,10 +66,9 @@ function AddNewBlogPostPage() {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       setImageFile(file);
-      // Create a preview URL
       const previewUrl = URL.createObjectURL(file);
       setImagePreviewUrl(previewUrl);
-      setUploadProgress(0); // Reset progress for new file
+      setUploadProgress(0);
     } else {
       setImageFile(null);
       setImagePreviewUrl(null);
@@ -75,21 +79,18 @@ function AddNewBlogPostPage() {
     e.preventDefault();
     setError('');
     setIsLoading(true);
-    setIsUploadingImage(false); // Reset image uploading state initially
-    setUploadProgress(0);
 
     if (title.trim() === '' || slug.trim() === '' || (content.trim() === '' || content === '<p><br></p>')) {
       setError('Title, Slug, and Content are required.');
       setIsLoading(false);
       return;
     }
-    if (!auth.currentUser) {
+
+    if (!user) { // Check for user prop
       setError('You must be logged in to create a post.');
       setIsLoading(false);
       return;
     }
-
-    console.log('Current user UID:', auth.currentUser.uid);
 
     let featuredImageUrl = '';
 
@@ -101,60 +102,41 @@ function AddNewBlogPostPage() {
       try {
         await new Promise<void>((resolve, reject) => {
           uploadTask.on('state_changed',
-            (snapshot) => {
-              const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-              setUploadProgress(progress);
-            },
-            (uploadError) => {
-              console.error("Upload Error:", uploadError);
-              setError(`Image upload failed: ${uploadError.message}`);
-              reject(uploadError);
-            },
+            (snapshot) => setUploadProgress((snapshot.bytesTransferred / snapshot.totalBytes) * 100),
+            (uploadError) => reject(uploadError),
             async () => {
-              try {
-                const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-                featuredImageUrl = downloadURL;
-                resolve();
-              } catch (urlError) {
-                console.error("Get URL Error:", urlError);
-                setError(`Failed to get image URL: ${urlError.message}`);
-                reject(urlError);
-              }
+              const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+              featuredImageUrl = downloadURL;
+              resolve();
             }
           );
         });
-      } catch (uploadProcessError) {
+      } catch (uploadError: any) {
+        setError(`Image upload failed: ${uploadError.message}`);
         setIsLoading(false);
         setIsUploadingImage(false);
-        return; 
+        return;
       }
       setIsUploadingImage(false);
     }
 
-    // Using the SIMPLIFIED postData for debugging from previous step
-    const postData: any = {
-      title: title,
-      slug: slug,
-      content: content,
-      authorId: auth.currentUser.uid,
-      authorName: auth.currentUser.displayName || auth.currentUser.email,
+    const postData = {
+      title,
+      slug,
+      content,
+      excerpt,
+      authorId: user.uid, // Use user prop
+      authorName: user.displayName || user.email, // Use user prop
       status: 'published',
-      // createdAt: serverTimestamp(), // Temporarily removed for debugging
-      // updatedAt: serverTimestamp(), // Temporarily removed for debugging
-      // excerpt: excerpt,          // Temporarily removed for debugging
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+      featuredImageUrl: featuredImageUrl || null,
     };
 
-    if (featuredImageUrl) { // Add image URL if it was uploaded
-      postData.featuredImageUrl = featuredImageUrl;
-    }
-    
-    console.log('SIMPLIFIED Data being published to Firestore:', postData);
-
     try {
-      const blogPostsCollection = collection(db, 'blogPosts');
-      await addDoc(blogPostsCollection, postData);
+      await addDoc(collection(db, 'blogPosts'), postData);
       router.push('/admin/blog');
-    } catch (err) {
+    } catch (err: any) {
       console.error('Error submitting blog post:', err);
       setError('Failed to submit blog post. Please try again.');
     } finally {
@@ -168,47 +150,44 @@ function AddNewBlogPostPage() {
 
       <form onSubmit={handleSubmit} className="space-y-6 bg-card p-6 sm:p-8 rounded-lg shadow-md mt-6">
         <div>
-          <Label htmlFor="title" className="block text-sm font-medium text-card-foreground">Title</Label>
-          <Input id="title" type="text" value={title} onChange={handleTitleChange} placeholder="Enter blog post title" className="mt-1" required />
+          <Label htmlFor="title">Title</Label>
+          <Input id="title" type="text" value={title} onChange={handleTitleChange} placeholder="Enter blog post title" required />
         </div>
 
         <div>
-          <Label htmlFor="slug" className="block text-sm font-medium text-card-foreground">Slug</Label>
-          <Input id="slug" type="text" value={slug} onChange={(e) => setSlug(generateSlug(e.target.value))} placeholder="auto-generated-from-title" className="mt-1" required />
-          <p className="mt-1 text-xs text-muted-foreground">User-friendly URL. Auto-generated but can be edited.</p>
+          <Label htmlFor="slug">Slug</Label>
+          <Input id="slug" type="text" value={slug} onChange={(e) => setSlug(generateSlug(e.target.value))} placeholder="auto-generated-from-title" required />
         </div>
 
         <div>
-          <Label htmlFor="featuredImage" className="block text-sm font-medium text-card-foreground">Featured Image (Optional)</Label>
-          <Input id="featuredImage" type="file" accept="image/*" onChange={handleImageChange} className="mt-1 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
-          {isUploadingImage && <Progress value={uploadProgress} className="w-full mt-2 h-2" />} 
+          <Label htmlFor="featuredImage">Featured Image (Optional)</Label>
+          <Input id="featuredImage" type="file" accept="image/*" onChange={handleImageChange} />
+          {isUploadingImage && <Progress value={uploadProgress} className="w-full mt-2 h-2" />}
           {imagePreviewUrl && (
             <div className="mt-4 relative w-full max-w-xs h-48">
-              <Image src={imagePreviewUrl} alt="Selected image preview" fill style={{objectFit: 'contain'}} className="rounded-md border" />
+              <Image src={imagePreviewUrl} alt="Selected image preview" fill style={{objectFit: 'contain'}} />
             </div>
           )}
-          <p className="mt-1 text-xs text-muted-foreground">Choose an image to display with your blog post.</p>
         </div>
 
         <div>
-          <Label htmlFor="excerpt" className="block text-sm font-medium text-card-foreground">Excerpt (Optional)</Label>
-          <Textarea id="excerpt" value={excerpt} onChange={(e) => setExcerpt(e.target.value)} placeholder="Short summary of the blog post..." className="mt-1" rows={3} />
-          <p className="mt-1 text-xs text-muted-foreground">A brief summary that might be shown in post listings.</p>
+          <Label htmlFor="excerpt">Excerpt (Optional)</Label>
+          <Textarea id="excerpt" value={excerpt} onChange={(e) => setExcerpt(e.target.value)} placeholder="Short summary...\" rows={3} />
         </div>
 
         <div>
-          <Label htmlFor="content" className="block text-sm font-medium text-card-foreground mb-1">Content</Label>
+          <Label htmlFor="content">Content</Label>
           <QuillEditor value={content} onChange={handleContentChange} placeholder="Write your blog post content here..." />
         </div>
 
         {error && <p className="text-sm text-destructive">{error}</p>}
 
         <div className="flex justify-end space-x-3">
-          <Button type="button" variant="outline" onClick={() => router.back()} disabled={isLoading || isUploadingImage}>
+          <Button type="button" variant="outline" onClick={() => router.back()} disabled={isLoading}>
             Cancel
           </Button>
-          <Button type="submit" disabled={isLoading || isUploadingImage}>
-            {isLoading ? (isUploadingImage ? `Uploading Image (${Math.round(uploadProgress)}%)...` : 'Publishing...') : 'Publish Post'}
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? 'Publishing...' : 'Publish Post'}
           </Button>
         </div>
       </form>

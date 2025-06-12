@@ -1,0 +1,283 @@
+SITE TEXT FOR GRAMMAR CHECKING
+================================
+
+This file contains all the text content from the website for grammar checking purposes.
+
+--------------------------------------------------
+File: src/app/page.tsx
+--------------------------------------------------
+
+Empowering Change, Inspiring Growth
+
+Stephanie Hunter is a multi-award winning professional dedicated to transforming practices and fostering environments where individuals and organisations can thrive. With expertise in trauma-informed care, ethical leadership, and impactful training, she offers a unique blend of professional insight and compassionate engagement. Trusted by organisations and professionals for transformative reflective and relational supervision, Stephanie is also a SILP methodology independent reviewer and an EMDR-trained therapist.
+
+A Message from Stephanie
+
+"My work is driven by a commitment to ethical practice and the belief that understanding trauma is key to unlocking human potential. I partner with organisations and individuals to build resilience, foster compassionate leadership, and create lasting positive change. Let's work together to make a meaningful difference."
+
+Learn More About Stephanie
+
+How Stephanie Can Help
+
+Explore a range of services designed to meet your specific needs, from engaging keynote speeches to comprehensive consultancy.
+
+Keynote Speaking
+
+Inspiring talks on trauma, safeguarding, self-care, adoption and promoting best outcomes for cared for children.
+
+Discover Keynotes
+
+Bespoke Training
+
+Tailored training programmes to enhance skills and knowledge in ethical, trauma-informed practices.
+
+Explore Training
+
+Consultancy
+
+Expert advice and strategic guidance to improve services and organisational approaches.
+
+Learn About Consultancy
+
+View All Services
+
+--------------------------------------------------
+File: src/components/HeroSection.tsx
+--------------------------------------------------
+
+Stephanie Hunter
+
+Dip S/W, BA, BSC, MA, PGCE, FHEA
+
+Keynote Speaker | Social Work Consultant | Trainer | SILP Methodology Trained Independent Reviewer | Practice Educator | Author | Therapist
+
+Explore Services
+
+Book Stephanie
+
+--------------------------------------------------
+File: src/components/Navbar.tsx
+--------------------------------------------------
+
+Home
+About
+Services
+Media
+Testimonials
+Book Stephanie
+Toggle menu
+Home
+About
+Services
+Media
+Testimonials
+Book Stephanie
+
+--------------------------------------------------
+File: src/components/Footer.tsx
+--------------------------------------------------
+
+© {currentYear} Stephanie Hunter. All rights reserved.
+Admin Log In
+
+--------------------------------------------------
+File: src/app/about/page.tsx
+--------------------------------------------------
+
+About Stephanie Hunter
+
+Trauma responsive and attachment informed work, underpinned by extensive post-graduate training.
+
+A Commitment to Compassion and Integrity
+
+Dip S/W, BA, BSC, MA, PGCE, FHEA
+
+Stephanie Hunter is a highly experienced keynote speaker, consultant, and trainer with over thirty years in the field. She is renowned for her deep expertise in trauma-informed practice, mental health, ethical leadership, and safeguarding. Stephanie has dedicated her career to championing the needs of vulnerable populations and fostering environments of healing, growth, and resilience.
+
+Her approach is rooted in a profound understanding of the impact of trauma, combined with a practical, evidence-based methodology. Stephanie excels at translating complex concepts into accessible and actionable strategies for professionals and organisations across various sectors.
+
+As a national and international speaker, Stephanie captivates audiences with her engaging style, insightful perspectives, and unwavering commitment to ethical practice. She empowers listeners to adopt compassionate, effective approaches in their work, leading to better outcomes and more supportive communities.
+
+Stephanie's expertise is widely recognized, and she has been trusted to deliver training and keynotes by a diverse range of prestigious organizations. These include Social Work England, NHS England, Malta International ACAMH, the Dublin Unity Conference, Young Minds, Barnardo’s, L30 Relational Systems, Cafcass, Action for Children, Young People Now, Insight, Aurora Education Group, Teeside, Durham and Northumbria University Conferences, and the House of Lords.
+
+Core Values & Philosophy
+
+Ethical Practice
+
+Upholding the highest ethical standards in all engagements, ensuring integrity and respect.
+
+Compassionate Engagement
+
+Fostering connection and understanding through empathy and genuine care.
+
+Trauma-Informed Approach
+
+Recognising the pervasive impact of trauma and integrating this knowledge into all services.
+
+--------------------------------------------------
+File: src/app/services/page.tsx
+--------------------------------------------------
+
+Services Offered
+
+Tailored solutions to empower individuals and organisations in trauma-informed practice, ethical leadership, and compassionate care.
+
+Keynote Speaking
+
+Engaging and insightful keynote presentations tailored to inspire and inform your audience. Stephanie delivers powerful messages on critical topics, drawing from her extensive experience and research.
+
+Focus Areas Include:
+
+Trauma-informed care principles
+Ethical leadership in challenging environments
+Building resilient communities
+Contemporary social work practice including contextual and transitional safeguarding.
+Mental health awareness and evidence-based practice.
+Co-production and lived experience.
+Innovations in adoption support
+
+Enquire about Keynote Speaking
+
+Bespoke Training
+
+Customized training programmes designed to equip professionals and organisations with the skills and knowledge to implement trauma-informed and ethical practices effectively. Interactive workshops and comprehensive modules available.
+
+Focus Areas Include:
+
+Advanced trauma-informed practice
+Safeguarding vulnerable adults and children
+Best practice in supporting families formed by adoption, kinship, fostering and residential childcare.
+Evidence-based mental health care practices.
+Developing ethical decision-making frameworks
+Trauma responsive and compassionate leadership
+
+Enquire about Bespoke Training
+
+Consultancy Services
+
+Expert consultancy to help organisations review, develop, and enhance their services, policies, and strategies. Stephanie provides strategic guidance to foster environments of best practice and continuous improvement.
+
+Focus Areas Include:
+
+Organisational trauma-informed audits
+Policy development and review for safeguarding
+Service design for adoption and foster care
+Mental health strategy implementation
+Ethical frameworks for service delivery
+Change management for compassionate cultures
+Service evaluation
+Safeguarding reviews
+Supervision (group and individual)
+
+Enquire about Consultancy Services
+
+Webinars & Media Engagements
+
+Stephanie has delivered commissioned training webinars for organizations such as The Children and Trauma Community Hub (which hosts the National Adoption Hub - CATCH), as well as various other charities and councils. She has alsoregularly spoken on the radio and participated in press interviews, sharing her expertise on related topics.
+
+Focus Areas Include:
+
+Commissioned training webinars for charities and councils
+Expert contributions for radio broadcasts
+Press interviews on trauma, adoption, and mental health
+Insights for national adoption hubs and community initiatives
+
+Enquire about Webinars & Media Engagements
+
+Ready to Make an Impact?
+
+Stephanie is passionate about collaborating to create meaningful change. If you're looking for an expert to guide, train, or inspire, get in touch to discuss your specific requirements.
+
+Book a Consultation
+
+--------------------------------------------------
+File: src/app/media/page.tsx
+--------------------------------------------------
+
+Media & Contributions
+
+Sharing knowledge and insights through various platforms.
+
+Featured Contributions
+
+Academic Profile & Research
+
+Stephanie Hunter's Published Research
+
+Stephanie Hunter (2016) Evaluation of Sunderland Children’s Services adoption team’s use of the adoption support fund. Project Report. Sunderland City Council, Sunderland.
+
+Download Research PDF
+
+Published Research & Film
+
+Award-Winning Research Film on Care-Experienced Adults
+
+Stephanie's published research with care-experienced adults was awarded funding by Social Work England to produce a film which has been nationally and internationally recognised and applauded.
+
+Learn More
+
+Webinars
+
+Engaging Webinars on Trauma and Mental Health
+
+Stephanie regularly hosts and participates in webinars covering a range of topics including trauma recovery, mental health in the workplace, and innovative safeguarding techniques. These sessions are designed to be interactive and accessible to a wide audience.
+
+View Past Webinars (Example)
+
+Publications
+
+Contributions to Professional Publications
+
+Stephanie has authored and co-authored articles and chapters in various professional publications and books, sharing her expertise on adoption, trauma-informed care, and ethical leadership. Her written work aims to advance knowledge and promote best practices.
+
+Explore Publications (Example)
+
+Training Film
+
+Collaborative Training Film with Social Work England
+
+Stephanie played a key role in a significant training film produced in partnership with Social Work England, focusing on best practices in ethical decision-making and trauma-informed approaches within social work. This film is utilized for professional development across the sector.
+
+Learn More (Example)
+
+Latest Blog Posts
+
+Loading blog posts...
+
+No blog posts published yet. Check back soon!
+
+For media inquiries or to discuss potential collaborations, please get in touch.
+
+Contact Stephanie
+
+--------------------------------------------------
+File: src/app/testimonials/page.tsx
+--------------------------------------------------
+
+Client Experiences & Recognition
+
+Hear from those who have benefited from Stephanie's expertise and see who trusts her services.
+
+Client Testimonials
+
+Discover how Stephanie has made a difference through her keynote speaking, training, and consultancy.
+
+Graham Frost
+
+"I recently had the opportunity to attend some training on The Power and Importance of Attachment with Steph and was totally engaged from beginning to end, even though it was on Zoom. I learned a tremendous amount that will help me in my role mentoring young lads. Thank you Steph!"
+
+Ciara McClelland
+
+"Steph is a bundle of joy and lights up any room. Steph will make you feel safe and cared for, seen and understood. Steph is highly experienced and skilled but is also very humble and approachable."
+
+Eddie O'Hara
+
+"Try as I may, I really cannot come up with a punchy few words which would do justice to how to best describe Stephanie's special, unique and positive impact upon those children and adults she works with, cares for and is committed to. Stephanie's enthusiasm, kindness, knowledge, expertise and continual postitive affirmation of of others is both envigorating and enabling. Stephanie is one of the genuinely lovely professionals I have bbeen lucky enough to meet along the way. My team and I loved working with Stephanie and genuinely look forward to doing so again. I cannot recommened Stephanie high enough :)"
+
+Tristana Rodriguez
+
+"The first thing I would say about Steph's training is that her knowledge and passion for her subject shine through, but above all, her breadth of experience. Safeguarding roles are stressful in their nature and the training can often feel heavy, but Steph had so many lovely, child-centred examples, it kept in mind why we do what we do. All of this was packaged up in the legislation and best practice we need to do the roles to the best of our ability. I came out of the training energised to do better and am hugely grateful."
+
+Trusted By
+
+Stephanie is proud to have worked with a diverse range of esteemed organisations.

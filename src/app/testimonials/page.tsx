@@ -7,7 +7,7 @@ import { Quote, Building, Star } from 'lucide-react'; // Added Star back for gol
 // Updated client testimonials
 const clientTestimonials = [
   {
-    quote: "I recently had the opportunity to attend some training on The Power and Importance of Attachment with Steph and was totally engaged from beginning to end, even though it was on Zoom. I learned a tremendous amount that will help me in my role mentoring young lads. Thank you Steph!",
+    quote: "I recently had the opportunity to attend some training on The Power and Importance of Attachment with Steph and was engaged from beginning to end, even though it was on Zoom. I learned a tremendous amount that will help me in my role of mentoring young lads. Thank you, Steph!",
     name: "Graham Frost",
     organisation: "", // Organisation not specified
   },
@@ -17,12 +17,12 @@ const clientTestimonials = [
     organisation: "", // Changed to empty string to display name as title
   },
   {
-    quote: "Try as I may, I really cannot come up with a punchy few words which would do justice to how to best describe Stephanie's special, unique and positive impact upon those children and adults she works with, cares for and is committed to. Stephanie's enthusiasm, kindness, knowledge, expertise and continual postitive affirmation of of others is both envigorating and enabling. Stephanie is one of the genuinely lovely professionals I have bbeen lucky enough to meet along the way. My team and I loved working with Stephanie and genuinely look forward to doing so again. I cannot recommened Stephanie high enough :)",
+    quote: "Try as I may, I really cannot come up with a punchy few words which would do justice to how to best describe Stephanie's special, unique, and positive impact upon those children and adults she works with, cares for, and is committed to. Stephanie's enthusiasm, kindness, knowledge, expertise, and continual positive affirmation of others are both invigorating and enabling. Stephanie is one of the genuinely lovely professionals I have been lucky enough to meet along the way. My team and I loved working with Stephanie and genuinely look forward to doing so again. I cannot recommend Stephanie high enough :)",
     name: "Eddie O'Hara",
     organisation: "", // Organisation not specified
   },
   {
-    quote: "The first thing I would say about Steph's training is that her knowledge and passion for her subject shine through, but above all, her breadth of experience. Safeguarding roles are stressful in their nature and the training can often feel heavy, but Steph had so many lovely, child-centred examples, it kept in mind why we do what we do. All of this was packaged up in the legislation and best practice we need to do the roles to the best of our ability. I came out of the training energised to do better and am hugely grateful.",
+    quote: "The first thing I would say about Steph's training is that her knowledge and passion for her subject shine through, but above all, her breadth of experience. Safeguarding roles are stressful in their nature and the training can often feel heavy, but Steph had so many lovely, child-centred examples, that it kept in mind why we do what we do. All of this was packaged up in the legislation and best practice we need to do the roles to the best of our ability. I came out of the training energised to do better and am hugely grateful.",
     name: "Tristana Rodriguez",
     organisation: "", // Organisation not specified, using name as title
   }

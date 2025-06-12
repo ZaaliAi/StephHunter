@@ -5,22 +5,14 @@ service cloud.firestore {
 
     // Blog Posts
     match /blogPosts/{postId} {
-      // Allow anyone to read published blog posts
+      // Anyone can read published posts
       allow read: if resource.data.status == 'published';
 
-      // Allow create if user is authenticated
-      allow create: if request.auth != null && 
-                      request.resource.data.authorId == request.auth.uid &&
-                      request.resource.data.status == 'published';
-
-      // Allow update if user is authenticated and is the author
-      allow update: if request.auth != null && resource.data.authorId == request.auth.uid;
-      
-      // Allow delete if user is authenticated and is the author
-      allow delete: if request.auth != null && resource.data.authorId == request.auth.uid;
+      // Only admin can create, update, or delete blog posts
+      allow create, update, delete: if request.auth != null && (request.auth.uid == 'dosd5t9yV4hhH5gu10pfpDao8xK2' || request.auth.token.admin == true);
     }
 
-    // Default deny for any other paths not explicitly matched
+    // Default deny for all other collections and documents
     match /{document=**} {
       allow read, write: if false;
     }

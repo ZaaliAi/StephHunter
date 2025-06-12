@@ -1,11 +1,9 @@
 
-// Import the functions you need from the SDKs you need
-import { initializeApp, getApps, getApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage'; // Added import for getStorage
+import { getStorage } from 'firebase/storage';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyD3ARuMpwliCw7onj5d-CuE1aunp6ouAQg",
   authDomain: "stephanie-hunter.firebaseapp.com",
@@ -13,19 +11,11 @@ const firebaseConfig = {
   storageBucket: "stephanie-hunter.firebasestorage.app",
   messagingSenderId: "714943100226",
   appId: "1:714943100226:web:85e28886cae8bd6af244db"
-  // measurementId is optional, so we can omit it if not provided or needed
 };
 
-// Initialize Firebase
-let app;
-if (!getApps().length) {
-  app = initializeApp(firebaseConfig);
-} else {
-  app = getApp();
-}
-
-const auth = getAuth(app);
+const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const storage = getStorage(app); // Initialized Firebase Storage
+const auth = getAuth(app);
+const storage = getStorage(app);
 
-export { app, auth, db, storage }; // Exported storage
+export { app, auth, db, storage };
