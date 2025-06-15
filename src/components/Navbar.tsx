@@ -46,10 +46,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-2 text-primary hover:text-accent transition-colors">
             <Image 
-              src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/1%20(1).png?alt=media&token=715f7993-5c5c-48ed-b7b5-17505ac5a339"
+              src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/logo.png?alt=media&token=a99fc303-ff2a-455c-93aa-fd20f86477cf"
               alt="Stephanie Hunter Logo"
-              width={225} 
-              height={56} 
+              width={180} 
+              height={45} 
               className="object-contain"
               priority
             />

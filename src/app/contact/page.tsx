@@ -1,7 +1,9 @@
 
 import PageHeader from '@/components/PageHeader';
 import SectionWrapper from '@/components/SectionWrapper';
-import { Mail, Phone, MapPin } from 'lucide-react'; // Example icons
+import { Mail, Phone, MapPin, Linkedin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function ContactPage() {
   return (
@@ -11,7 +13,6 @@ export default function ContactPage() {
         description="Stephanie would love to hear from you. Reach out to discuss your needs or book her for your next event." 
       />
       <SectionWrapper>
-        {/* The main content div, centered and with appropriate max-width for readability */}
         <div className="max-w-2xl mx-auto space-y-12">
           <div className="space-y-8">
             <div>
@@ -35,20 +36,20 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
-              
-              {/* Optional: Add Address if provided by user */}
-              {/* 
-              <div className="flex items-center space-x-3 p-4 bg-secondary/20 rounded-lg shadow-sm">
-                <MapPin className="h-7 w-7 text-accent flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-lg">Location</p>
-                  <p className="text-muted-foreground text-base sm:text-lg">
-                    Based in [City, Country] - Available Nationally & Internationally (Placeholder)
-                  </p>
-                </div>
-              </div>
-              */}
             </div>
+
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-semibold text-primary mb-6">Follow on Social Media</h3>
+              <div className="flex justify-start">
+                <Button asChild variant="outline" className="text-primary border-primary hover:bg-primary/10">
+                  <Link href="https://www.linkedin.com/in/stephanie-hunter-dip-s-w-ba-bsc-ma-pgce-fhea-08633890/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="mr-2 h-5 w-5" />
+                    LinkedIn
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
             <div>
               <h3 className="text-2xl sm:text-3xl font-semibold text-primary mb-6">Availability</h3>
               <p className="text-lg text-muted-foreground">
