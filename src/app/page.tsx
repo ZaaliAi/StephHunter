@@ -18,7 +18,7 @@ export default function Home() {
             Empowering Change, Inspiring Growth
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Stephanie Hunter is a multi-award-winning professional dedicated to transforming practices and fostering environments where individuals and organisations can thrive. With expertise in trauma-informed care, ethical leadership, and impactful training, she offers a unique blend of professional insight and compassionate engagement. Trusted by organisations and professionals for transformative reflective and relational supervision, Stephanie is also a SILP methodology independent reviewer and an EMDR-trained therapist.
+            Steph Hunter has thirty years social work experience over twenty in management and leadership including Clinical Director and Head of quality and practice and Principal Social Worker. She has undergone extensive additional training in relation to attachment and trauma.
           </p>
         </div>
 

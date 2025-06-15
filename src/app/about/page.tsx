@@ -27,7 +27,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-semibold text-primary">A Commitment to Compassion and Integrity</h2>
             <p className="text-md text-muted-foreground font-medium">Dip S/W, BA, BSC, MA, PGCE, FHEA</p>
             <p className="text-lg text-muted-foreground">
-              Stephanie Hunter is a highly experienced keynote speaker, consultant, and trainer with over 30 years of experience in the field. She is renowned for her deep expertise in trauma-informed practice, mental health, ethical leadership, and safeguarding. Stephanie has dedicated her career to championing the needs of vulnerable populations and fostering environments of healing, growth, and resilience.
+              As a multi-award-winning professional dedicated to transforming practices and fostering environments where individuals and organisations can thrive, Stephanie Hunter is a highly experienced keynote speaker, consultant, and trainer with over 30 years of experience in the field. With expertise in trauma-informed care, ethical leadership, and impactful training, she offers a unique blend of professional insight and compassionate engagement. Trusted by organisations and professionals for transformative reflective and relational supervision, Stephanie is also a SILP methodology independent reviewer and an EMDR-trained therapist. She is renowned for her deep expertise in trauma-informed practice, mental health, ethical leadership, and safeguarding. Stephanie has dedicated her career to championing the needs of vulnerable populations and fostering environments of healing, growth, and resilience.
             </p>
             <p className="text-lg text-muted-foreground">
               Her approach is rooted in a profound understanding of the impact of trauma, combined with a practical, evidence-based methodology. Stephanie excels at translating complex concepts into accessible and actionable strategies for professionals and organisations across various sectors.
@@ -36,7 +36,7 @@ export default function AboutPage() {
               As a national and international speaker, Stephanie captivates audiences with her engaging style, insightful perspectives, and unwavering commitment to ethical practice. She empowers listeners to adopt compassionate, effective approaches in their work, leading to better outcomes and more supportive communities.
             </p>
             <p className="text-lg text-muted-foreground">
-              Stephanie's expertise is widely recognized, and she has been trusted by a diverse range of prestigious organizations to deliver training and keynotes. These include Social Work England, NHS England, Malta International ACAMH, the Dublin Unity Conference, Young Minds, Barnardo’s, L30 Relational Systems, Cafcass, Action for Children, Young People Now, Insight, Aurora Education Group, Teesside, Durham and Northumbria University Conferences, and the House of Lords.
+              Stephanie's expertise is widely recognised, and she has been trusted by a diverse range of prestigious organizations to deliver training and keynotes. These include Social Work England, NHS England, Malta International ACAMH, the Dublin Unity Conference, Young Minds, Barnardo’s, L30 Relational Systems, Cafcass, Action for Children, Young People Now, Insight, Aurora Education Group, Teesside, Durham and Northumbria University Conferences, and the House of Lords.
             </p>
           </div>
         </div>
