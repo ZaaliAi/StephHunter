@@ -48,7 +48,7 @@ const trustedByLogos = [
   },
   {
     name: "10 Downing Street",
-    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/10_Downing_Street_logo.png?alt=media&token=f2fba8fa-ec74-4d5d-966a-8fd828d603b7",
+    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/4aba954f2698316c45621d8665f2d825.jpg?alt=media&token=79cca158-eefe-4be2-9fd0-eabd3d197b28",
     size: "large" // Custom size identifier
   },
   {
