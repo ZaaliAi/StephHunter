@@ -21,8 +21,8 @@ export default function ContactPage() {
                 <Mail className="h-7 w-7 text-accent flex-shrink-0" />
                 <div>
                   <p className="font-semibold text-lg">Email</p>
-                  <a href="mailto:steph@stephaniehunter.co.uk" className="text-muted-foreground hover:text-accent transition-colors text-base sm:text-lg break-all">
-                    steph@stephaniehunter.co.uk
+                  <a href="mailto:hello@stephaniehunter.co.uk" className="text-muted-foreground hover:text-accent transition-colors text-base sm:text-lg break-all">
+                    hello@stephaniehunter.co.uk
                   </a>
                 </div>
               </div>
