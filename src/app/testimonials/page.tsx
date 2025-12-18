@@ -32,28 +32,28 @@ const clientTestimonials = [
 const trustedByLogos = [
   {
     name: "Social Work England",
-    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/social_work_england_logo_bordered.png?alt=media&token=42f73c4c-4ac5-4b6e-94da-25faba9aa8dc"
+    src: "https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/social_work_england_logo_bordered.png"
   },
   {
     name: "NHS England",
-    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/National_Health_Service_(England)_logo.svg.png?alt=media&token=71219b4b-3c0a-4a31-a6de-4fdfbba99e39"
+    src: "https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/National_Health_Service_(England)_logo.svg.png"
   },
   {
     name: "Barnardo's",
-    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Barnardos_slogan.webp?alt=media&token=7e0d2d6b-9d5e-4bb2-8945-e03e00605053"
+    src: "https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/Barnardos_slogan.webp"
   },
   {
     name: "YoungMinds",
-    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/YoungMinds-New-logo.png?alt=media&token=b97b963b-21e5-4aae-b0b9-5e0a67f786c0"
+    src: "https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/YoungMinds-New-logo.png"
   },
   {
     name: "10 Downing Street",
-    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/4aba954f2698316c45621d8665f2d825.jpg?alt=media&token=79cca158-eefe-4be2-9fd0-eabd3d197b28",
+    src: "https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/10_Downing_Street_logo.png",
     size: "large" // Custom size identifier
   },
   {
     name: "ACAMH",
-    src: "https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/ACAMH_MasterLogo.png?alt=media&token=81e0c03c-9aea-4e33-b554-44e140f2cc99",
+    src: "https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/ACAMH_MasterLogo.png",
     size: "large" // Custom size identifier
   }
 ];

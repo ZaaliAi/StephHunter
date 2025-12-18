@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -44,7 +43,7 @@ const staticMediaItems: MediaItem[] = [
     icon: BookText,
     link: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/ASF%20-%20final%20evaluation%20PDF.pdf?alt=media&token=129b0ace-6784-44a5-8776-f1928131d61a',
     linkLabel: "Download Research PDF",
-    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/186a396fd0cab5c4fb2a83f2adb860df_f64e5906bf.webp?alt=media&token=40395e57-46ae-4e0a-a4f5-86640d66e07a',
+    image: 'https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/186a396fd0cab5c4fb2a83f2adb860df_f64e5906bf.webp',
     imageHint: "academic profile research paper",
     isDownload: true
   },
@@ -55,7 +54,7 @@ const staticMediaItems: MediaItem[] = [
     icon: Film,
     link: '#', 
     linkLabel: 'Learn More',
-    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6194.jpeg?alt=media&token=31d6929f-2fef-4422-b3de-106dca1751e3', 
+    image: 'https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/IMG_6194.jpeg', 
     imageHint: 'award presentation photo' 
   },
   {
@@ -65,8 +64,8 @@ const staticMediaItems: MediaItem[] = [
     icon: Mic,
     link: '#', 
     linkLabel: 'View Past Webinars (Example)',
-    image: 'https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6312.JPEG?alt=media&token=4b42cee1-7320-40d8-8500-b42d84caa513', 
-    imageHint: 'webinar presentation' 
+    image: 'https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/Steph.JPEG', 
+    imageHint: 'webinar presentation professional' 
   },
   {
     type: 'Publications',

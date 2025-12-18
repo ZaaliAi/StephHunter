@@ -15,8 +15,8 @@ export default function AboutPage() {
         <div className="flow-root"> {/* Manages the floating child element */}
           <div className="md:float-right md:ml-6 lg:ml-8 mb-6 md:w-2/5 lg:w-1/3"> {/* Image container: floats right on md+, has margin, and responsive width */}
             <Image 
-              src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6312.JPEG?alt=media&token=4b42cee1-7320-40d8-8500-b42d84caa513" 
-              alt="Stephanie Hunter"
+              src="https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/IMG_6312%20(1).JPEG" 
+              alt="Stephanie Hunter - About Page Portrait"
               width={500}
               height={600}
               className="rounded-xl shadow-2xl object-cover w-full h-auto aspect-[4/5]" /* Adjusted for responsiveness */
