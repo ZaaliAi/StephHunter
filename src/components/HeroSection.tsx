@@ -9,8 +9,8 @@ export default function HeroSection() {
   return (
     <div className="relative bg-gradient-to-br from-primary via-primary/90 to-accent/80 text-primary-foreground py-24 sm:py-32 md:py-40 min-h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden">
       <Image
-        src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/IMG_6312.JPEG?alt=media&token=4b42cee1-7320-40d8-8500-b42d84caa513"
-        alt="Stephanie Hunter - engaging portrait"
+        src="https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/IMG_6312.JPEG"
+        alt="Stephanie Hunter - professional portrait"
         fill
         style={{ objectFit: 'cover', objectPosition: 'center 8%' }} // Position is good
         className="opacity-40" // Adjusted opacity for more image visibility

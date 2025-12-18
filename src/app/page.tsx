@@ -25,11 +25,11 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <Image 
-              src="https://firebasestorage.googleapis.com/v0/b/stephanie-hunter.firebasestorage.app/o/Untitled%20design%20(7).png?alt=media&token=5aaad9c8-79b4-4229-9431-e838e065f82b" 
-              alt="Stephanie Hunter professional image"
+              src="https://loirhexauyamqihgphsu.supabase.co/storage/v1/object/public/steph/IMG_1680.jpg" 
+              alt="Stephanie Hunter - Empowering Change"
               width={600}
               height={400}
-              className="rounded-lg shadow-xl object-contain aspect-[3/2]"
+              className="rounded-lg shadow-xl object-cover aspect-[3/2]"
               data-ai-hint="professional portrait"
             />
           </div>
